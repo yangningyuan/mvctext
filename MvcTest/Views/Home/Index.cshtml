@@ -1,0 +1,26 @@
+﻿@using MvcTest.Models
+
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+    User u = ViewBag.user;
+}
+
+<h2>Index</h2>
+
+<div>
+    <span>Index</span>
+    <form method="post" action="~/Home/login">
+        @ViewBag.tagname<input type="text"  name="name"   /><br />
+        @ViewData["tagpwd"]<input type="password"  name="password" /><br />
+        <input type="submit" value="提交" />
+        <br />Id：@ViewBag.user.id
+        <br />账号：@ViewBag.user.username
+        <br />密码：@ViewBag.user.password
+        <br />
+        @u.id
+        <br />
+        @{Html.RenderAction("jubupage", "Home");}
+        <br />
+    </form>
+</div>
